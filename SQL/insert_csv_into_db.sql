@@ -26,3 +26,9 @@ CREATE TABLE PERFORMANCE_LOG(
 
 -- Insert CSV file into table
 LOAD DATA INFILE '/path/to/file' INTO TABLE PERFORMANCE_LOG FIELDS TERMINATED BY '\t' LINES TERMINATED BY '\n' IGNORE 1 LINES;
+
+
+
+-- Updating to easiest way
+sudo mysql -u $user -p --local-infile=1 $database
+LOAD DATA LOCAL INFILE '/var/lib/mysql-files/MyAccount.csv' INTO TABLE $table_name FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n' IGNORE 1 LINES;
